@@ -12,7 +12,7 @@ const saltRounds = 10;
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+    host : 'postgresql-encircled-05415',
     user : 'yash',
     password : '',
     database : 'face-ai'
