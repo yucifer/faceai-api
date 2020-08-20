@@ -1,5 +1,5 @@
 
-const handlesignin = (req,res,db, bcryptjs) => {
+const handlesignin = (req,res,db, bcrypt) => {
 	const {email, password} = req.body;
 	if (!email || !password) {
 		return res.status(400).json("please fill the form fields")
@@ -7,7 +7,7 @@ const handlesignin = (req,res,db, bcryptjs) => {
 	db.select('email','hash').from('login')
 	  .where('email', '=', email)
 	  .then(data => {
-	  	 const isValid = bcryptjs.compareSync(password, data[0].hash);
+	  	 const isValid = bcrypt.compareSync(password, data[0].hash);
 	  	 if (isValid) {
 	  	 	return db.select('*').from('users')
 	  	 	.where('email', '=', email)

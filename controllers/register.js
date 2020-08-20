@@ -1,8 +1,8 @@
 
-const handleregister = (req, res, db, bcryptjs) => {
+const handleregister = (req, res, db, bcrypt) => {
 	const { email, password, name } = req.body;
 	if (email && password && name) {
-		const hash = bcryptjs.hashSync(password, 8);
+		const hash = bcrypt.hashSync(password, 8);
 		db.transaction(trx => {
 			trx.insert({
 				hash: hash,
