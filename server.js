@@ -7,7 +7,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-
+const saltRounds = 10;
 
 const db = knex({
   client: 'pg',
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
 
 app.post('/signin', (req, res) => signin.handlesignin(req,res, db, bcrypt))
 
-app.post('/register', (req, res) => register.handleregister(req,res, db, bcrypt))
+app.post('/register', (req, res) => register.handleregister(req,res, db, bcrypt, saltRounds))
 
 app.get('/profile/:id', (req, res) => profile.handleprofileGet(req,res,db))
 
