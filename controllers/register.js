@@ -1,5 +1,5 @@
 
-const handleregister = (req, res, db, bcrypt,saltRounds) => {
+const handleregister = (req, res, db, bcrypt) => {
 	const { email, password, name } = req.body;
 	if (email && password && name) {
 		const salt = bcrypt.genSaltSync(saltRounds);
