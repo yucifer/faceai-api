@@ -1,5 +1,6 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const cors = require('cors');
 const knex = require('knex');
 const register = require('./controllers/register');
@@ -53,9 +54,9 @@ app.get('/', (req, res) => {
 	res.send('it is working');
 })
 
-app.post('/signin', (req, res) => signin.handlesignin(req,res, db, bcrypt))
+app.post('/signin', (req, res) => signin.handlesignin(req,res, db, bcryptjs))
 
-app.post('/register', (req, res) => register.handleregister(req,res, db, bcrypt))
+app.post('/register', (req, res) => register.handleregister(req,res, db, bcryptjs))
 
 app.get('/profile/:id', (req, res) => profile.handleprofileGet(req,res,db))
 
