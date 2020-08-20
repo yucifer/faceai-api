@@ -1,7 +1,6 @@
 {
   "name": "faceai-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -10,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "bcrypt-nodejs": "0.0.3",
     "clarifai": "^2.9.1",
     "cors": "^2.8.5",
@@ -20,5 +20,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yucifer/faceai-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yucifer/faceai-api/issues"
+  },
+  "homepage": "https://github.com/yucifer/faceai-api#readme",
+  "description": ""
 }
