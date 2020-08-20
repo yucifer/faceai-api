@@ -1,4 +1,4 @@
-
+const saltRounds = 10;
 const handleregister = (req, res, db, bcrypt) => {
 	const { email, password, name } = req.body;
 	if (email && password && name) {

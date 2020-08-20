@@ -7,7 +7,7 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
-const saltRounds = 10;
+
 
 const db = knex({
   client: 'pg',
