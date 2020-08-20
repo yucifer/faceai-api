@@ -1,8 +1,8 @@
-const saltRounds = 10;
+
 const handleregister = (req, res, db, bcrypt) => {
 	const { email, password, name } = req.body;
 	if (email && password && name) {
-		const hash = bcrypt.hashSync(password, saltRounds);
+		const hash = bcrypt.hashSync(password, 10);
 		db.transaction(trx => {
 			trx.insert({
 				hash: hash,
