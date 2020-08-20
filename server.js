@@ -10,11 +10,9 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-encircled-05415',
-    user : 'yash',
-    password : '',
-    database : 'face-ai'
-  }
+    host : process.env.DATABASE_URL,
+    ssl: true,
+    }
 })
 
 // db.select('*').from('users').then(data => {
